@@ -16,7 +16,7 @@ def load(df: pd.DataFrame, destination: str):
     return df.to_csv(destination, index=False)
 
 
-def validation(df: pd.DataFrame, requiered_columns: str) -> None:
-    missing = set(requiered_columns) - set(df.columns)
+def validation(df: pd.DataFrame, required_columns: list) -> None:
+    missing = set(required_columns) - set(df.columns)
     if missing:
         raise ValueError(f"Kolom hilang: {missing}")
