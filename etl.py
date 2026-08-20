@@ -4,8 +4,8 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 
-def extract_data(source: str) -> pd.DataFrame:
-    return pd.read_csv(source)
+def extract_data(source):
+    return pd.read_csv(source, chunksize=1000)
 
 
 def transform(df: pd.DataFrame) -> pd.DataFrame:
